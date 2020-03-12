@@ -1,0 +1,25 @@
+body
+{
+	font-size: 17px;
+	margin: 0;
+}
+header
+{
+	background: #F3E9F2;
+}
+main
+{
+	padding: 20px;
+	background: #F3E9F2
+}
+h1
+{
+	text-align:center;
+}
+@media screen and (min-width:750px)
+{
+	body
+	{
+		font-size: 20px;
+	}
+}
