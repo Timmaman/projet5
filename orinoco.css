@@ -3,7 +3,7 @@ body
 	font-size: 17px;
 	margin: 0;
 }
-header
+header, footer
 {
 	background: rgb(243 ,233, 242);
 	padding: 10px;
@@ -11,7 +11,14 @@ header
 main
 {
 	padding: 20px;
-	background: rgb(243 ,233, 242, 0.3);
+	background: rgb(243 ,233, 242, 0.5);
+}
+footer a
+{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	padding: 30px;
 }
 h1
 {
@@ -19,7 +26,24 @@ h1
 }
 .logo img
 {
-	max-width: 30%;
+	width: 30%;
+	overflow: hidden;
+}
+a
+{
+	text-align: center;
+}
+.presentation
+{
+	display: flex;
+	flex-direction:column;
+	justify-content: space-around;
+	margin: 20px;
+}
+.presentation img
+{
+	margin: auto;
+	width: 80%;
 }
 @media screen and (min-width:750px)
 {
