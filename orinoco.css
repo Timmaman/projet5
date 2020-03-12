@@ -5,16 +5,21 @@ body
 }
 header
 {
-	background: #F3E9F2;
+	background: rgb(243 ,233, 242);
+	padding: 10px;
 }
 main
 {
 	padding: 20px;
-	background: #F3E9F2
+	background: rgb(243 ,233, 242, 0.3);
 }
 h1
 {
 	text-align:center;
+}
+.logo img
+{
+	max-width: 30%;
 }
 @media screen and (min-width:750px)
 {
