@@ -1,11 +1,13 @@
 
-var request = new XMLHttpRequest();
-request.onreadystatechange = function() {
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-        var response = JSON.parse(this.responseText);
-        console.log(response.current_condition.condition);
-    }
-};
 
-request.open("GET", "http://localhost:3000/api/cameras");
-request.send();
+let elt= document.getElementById('open');
+
+async function test() {
+response = await fetch("http://localhost:3000/api/cameras");
+data = await response.json()
+.then((data) => { 
+console.log(elt.innerHTML+=data);
+})
+}
+
+

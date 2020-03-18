@@ -1,17 +1,21 @@
 body
 {
 	font-size: 17px;
+	font-family: "Baloo 2";
 	margin: 0;
 }
 header, footer
 {
-	background: rgb(243 ,233, 242);
+	background: rgb(251 ,229, 192);
 	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 main
 {
 	padding: 20px;
-	background: rgb(243 ,233, 242, 0.5);
+	background: rgb(251 ,229, 192, 0.4);
 }
 footer a
 {
@@ -19,26 +23,31 @@ footer a
 	color: black;
 	font-weight: bold;
 	padding: 30px;
+	font-size: 25px;
 }
 h1
+{
+	font-size: 40px;
+}
+
+h2
 {
 	text-align:center;
 }
 .logo img
 {
-	width: 30%;
+	height: 100px;
 	overflow: hidden;
 }
+
 a
 {
 	text-align: center;
 }
 .presentation
 {
-	width: 100%;
 	display: flex;
 	flex-wrap:wrap;
-	flex-direction: space-between;
 	justify-content: space-evenly;
 }
 .presentation img
@@ -46,14 +55,34 @@ a
 	width: 300px;
 	margin-bottom: 30px;
 }
-@media screen and (min-width:750px)
+@media screen and (min-width:768px)
 {
 	body
 	{
 		font-size: 20px;
 	}
+	h1
+	{
+		font-size: 70px;
+	}
+	.logo img
+	{
+		height: 200px
+	}
 	.presentation img
 	{
 		width: 500px;
+	}
+	footer a
+	{
+		font-size: 30px;
+	}
+}
+@media screen and (min-width: 1024px)
+{
+	header, footer
+	{
+		justify-content: flex-start;
+		padding-left: 50px;
 	}
 }
