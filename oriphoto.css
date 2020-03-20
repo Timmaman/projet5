@@ -25,14 +25,14 @@ footer a
 	padding: 30px;
 	font-size: 25px;
 }
-main a 
+main div
 {
 	padding: 20px;
 	text-align: center;
 	text-decoration:none;
 	color:black;
 }
-main a:hover
+main div:hover
 {
 	background-color:rgb(248,158,35);
 }

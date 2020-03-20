@@ -1,4 +1,5 @@
-oldname=0
+
+
 
 async function recup() {
 	response = await fetch("http://localhost:3000/api/cameras");
@@ -9,15 +10,17 @@ async function recup() {
 	
 		for (article of data)
 			{
+			oldname=0
 			//pour créer la div parent de chaque produit
 			if(article.name!=oldname){
 				parent=document.getElementById('articles')
-				new_parent=document.createElement("a");
-				new_parent.href="produit.html"
+				new_parent=document.createElement("div");
 				name=article.name
 				parent.append(new_parent)
 				new_parent.id=article.name
-				new_parent.alt=article.name
+				new_parent.onclick=function test(){
+					alert("coucou")
+				}
 				oldname=name
 				//Pour créer les paragraphes avec les infos
 				if (article.name=oldname){
@@ -51,6 +54,7 @@ async function recup() {
 		
 		}
 	})
+
 
 
 
