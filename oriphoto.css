@@ -8,6 +8,9 @@ body
 header, footer
 {
 	background: rgb(251 ,229, 192);
+}
+footer, header a
+{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,11 +20,13 @@ main
 	padding: 30px;
 	background: rgb(251 ,229, 192, 0.4);
 }
-footer a
+a
 {
 	text-decoration: none;
 	color: black;
-	font-weight: bold;
+}
+footer a
+{
 	padding: 30px;
 	font-size: 25px;
 }
@@ -35,6 +40,10 @@ main div
 main div:hover
 {
 	background-color:rgb(248,158,35);
+}
+article
+{
+	padding-bottom: 50px;
 }
 p
 {
@@ -75,6 +84,15 @@ a
 {
 	width: 200px;
 }
+#infos 
+{
+	max-width: 40%;
+}
+#description
+{
+	max-width: 200px
+}
+
 @media screen and (min-width:768px)
 {
 	body
@@ -101,6 +119,10 @@ a
 	{
 		width: 500px;
 	}
+	#description
+	{
+		max-width: 500px;
+	}
 	footer a
 	{
 		font-size: 30px;
@@ -108,7 +130,7 @@ a
 }
 @media screen and (min-width: 1024px)
 {
-	header, footer
+	header a, footer
 	{
 		justify-content: flex-start;
 		padding-left: 50px;

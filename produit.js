@@ -1,8 +1,11 @@
-async function product(){
-	response = await fetch("http://localhost:3000/api/cameras");
-	data = await response.json()
-	return data; 
-	}
-	product().then(function(data){
-		for(article of data)
-		console.log(article.name)})
+function product(){
+	
+	let send=sessionStorage.setItem("product","test")
+	document.location.href="produit.html"
+	
+	const product_select=document.getElementById('products');
+	let product_other=sessionStorage.getItem("product")
+	product_select.appendChild(product_other)
+	
+}
+
