@@ -5,20 +5,37 @@ async function recup() {
 	response = await fetch("http://localhost:3000/api/cameras");
 	data = await response.json();
 	return data; 
-	}
-	recup().then(function(data){
-	
-		for (let article of data)
+}
+
+recup().then(function(data){
+		localStorage.setItem('articles', data);
+		display()
+
+})
+//function display() {}
+
+const display = () => {
+	createLinks();
+
+	createListener();
+}	
+
+
+
+const createLinks = () => {
+	for (let article of data)
 			{
 			//pour créer la div parent de chaque produit
 			let oldname=0;
 			if(article.name!=oldname){
 				const parent=document.getElementById('articles');
-				const new_parent=document.createElement("div");
+				const new_parent=document.createElement("a");
 				let name=article.name;
 				parent.append(new_parent);
 				new_parent.id=article.name;
-				new_parent.onclick=product;
+				new_parent.className="test";
+				new_parent.onclick="setLocalStorage";
+				new_parent.href="produit.html";
 				
 				oldname=name;
 				//Pour créer les paragraphes avec les infos
@@ -47,36 +64,19 @@ async function recup() {
 					price+=" €";
 					console.log (price_child.innerHTML+=price);
 
-					//Affichage description
-					const child_desc=document.getElementById(article.name);
-					const desc_child=document.createElement("p");
-					child_desc.append(desc_child);
-					desc_child.id="description";
-					console.log (desc_child.innerHTML+=article.description);
+					
 				}
 			}
-		}
-	})
-
-
-
-function product(){
-    let product=document.getElementById(this.id)
-    
-    const supp=document.getElementById('articles');
-    while (supp.firstChild) { supp.removeChild(supp.firstChild);
-    }
-    supp.appendChild(product);
-
-    let replace=document.getElementById("title").innerText="Voici la caméra que vous avez choisie";
-
-    let top=document.getElementById("products");
-    let index=document.getElementById("index");
-    let garbage=top.removeChild(index);
-    let button=document.createElement("button")
-    top.append(button);
-   	let test="Ajouter au panier"
-    console.log(button.innerHTML=+test)
-
+}	// localStorage de tous les articles
+		//  createLinks( (creeer liens)
+			// for each links => addEventListener('click'=>setLocalStorage('currentArticle', event.target.getAttr('id'))))
+}	
+const createListener = () => {
+	var links = document.getElementsByClassName('test');
+	for (let i = 0; i<=links.length; i++) {
+		links[i].addEventListener('click', function(e) {
+			console.log("event :"+e)
+			localStorage.setItem('article_id',event.target.getAttr('id'));
+		})
+	}
 }
-
