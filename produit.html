@@ -4,33 +4,35 @@
 		<meta charset="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="stylesheet" href="oriphoto.css">
-			<title>Index - Oriphoto </title>
+			<title>Produit - Oriphoto </title>
 			<link rel="icon" href="images/logosite.jpg" />
 
 			<link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
-			<script type="text/javascript" src="affichage_produits.js" defer></script>
+			<script type="text/javascript" src="produit.js"></script>
+
+			
 	</head>
-	<body onload="product()">
+	<body onload="recup()" >
 		<header class="logo">
-			<a><img src="images/logosite.jpg"/></a>
-			<h1> Oriphoto</h1>
+			<a href="index.html">
+				<img src="images/logosite.jpg" />
+				<h1> Oriphoto</h1>
+			</a>
 		</header>
 		<main>
-			<h2> Bienvenue sur Oriphoto, votre site spécialiste en caméras et appareils photos vintages.</h2>
-			<section id="products">
-				<h3> Voici le produit que vous avez sélectionné:</h3>
-				<div>
-					<h4 id="titre"></h4>
-				</div>
+			<h2> Voici le produit que vous avez sélectionné:</h2>
+			<section id="product">
+				<article id="infos">
+					<button> Ajouter au panier </button>
+					<select id="personnalisation">
+						 <option value="">--Choisissez votre objectif--</option>
+					</select>
+				</article>
 			</section>
 		</main>
 		<footer>
 			<a href="mentions.html">Mentions légales</a>
 		</footer>
-		<script type="text/javascript">
-			let articles = localStorage.getItem('articles')
-			let article = articles[localStorage.getItem('article_id')];
-			document.getElementById('titre').innerHTML=article.name;
-		</script>
+	
 	</body>
 </html>

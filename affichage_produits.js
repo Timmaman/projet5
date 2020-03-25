@@ -7,6 +7,7 @@ async function recup() {
 	return data; 
 }
 
+
 recup().then(function(data){
 		localStorage.setItem('articles', data);
 		display()
@@ -20,10 +21,9 @@ const display = () => {
 	createListener();
 }	
 
-
-
 const createLinks = () => {
 	for (let article of data)
+
 			{
 			//pour créer la div parent de chaque produit
 			let oldname=0;
@@ -32,15 +32,14 @@ const createLinks = () => {
 				const new_parent=document.createElement("a");
 				let name=article.name;
 				parent.append(new_parent);
-				new_parent.id=article.name;
+				new_parent.id=article._id;
 				new_parent.className="test";
-				new_parent.onclick="setLocalStorage";
 				new_parent.href="produit.html";
 				
 				oldname=name;
 				//Pour créer les paragraphes avec les infos
 				if (article.name=oldname)
-					{const child_photo=document.getElementById(article.name);
+					{const child_photo=document.getElementById(article._id);
 					const photo_child=document.createElement("img");
 					photo_child.src=article.imageUrl;
 					photo_child.alt=article.name;
@@ -49,14 +48,14 @@ const createLinks = () => {
 					photo_child.id="image";
 
 					//Pour afficher le nom du produit
-					const child_name=document.getElementById(article.name);
+					const child_name=document.getElementById(article._id);
 					const name_child=document.createElement("p");
 					child_name.append(name_child);
 					name_child.id="name";
 					console.log (name_child.innerHTML+=article.name);
 
 					//Affichage du prix
-					const child_price=document.getElementById(article.name);
+					const child_price=document.getElementById(article._id);
 					const price_child=document.createElement("p");
 					child_price.append(price_child);
 					price_child.id="price";
@@ -73,10 +72,10 @@ const createLinks = () => {
 }	
 const createListener = () => {
 	var links = document.getElementsByClassName('test');
-	for (let i = 0; i<=links.length; i++) {
+	for (let i = 0; i<links.length; i++) {
 		links[i].addEventListener('click', function(e) {
-			console.log("event :"+e)
-			localStorage.setItem('article_id',event.target.getAttr('id'));
-		})
+			console.log(event.target.getAttribute('id'))
+			localStorage.setItem('article_id',event.currentTarget.getAttribute('id'));
+		},)
 	}
 }

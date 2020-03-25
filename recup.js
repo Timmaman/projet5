@@ -88,12 +88,8 @@ if (article.name=newname){
             photo_child.alt=article.name;
             photo_child.title=article.name;
             child_photo.append(photo_child);
-            photo_child.id="image";
+            photo_child.id="product_img";
 
-            const child_infos=document.getElementById("articles");
-            const infos_child=document.createElement("div");
-            child_infos.append(infos_child);
-            infos_child.id="infos"
 
             //Pour afficher le nom du produit
             const child_name=document.getElementById("infos");
