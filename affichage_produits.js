@@ -9,13 +9,11 @@ async function recup() {
 
 
 recup().then(function(data){
-		localStorage.setItem('articles', data);
-		display()
-
+		create()
 })
 //function display() {}
 
-const display = () => {
+const create = () => {
 	createLinks();
 
 	createListener();
@@ -23,7 +21,6 @@ const display = () => {
 
 const createLinks = () => {
 	for (let article of data)
-
 			{
 			//pour créer la div parent de chaque produit
 			let oldname=0;
@@ -33,7 +30,7 @@ const createLinks = () => {
 				let name=article.name;
 				parent.append(new_parent);
 				new_parent.id=article._id;
-				new_parent.className="test";
+				new_parent.className="product";
 				new_parent.href="produit.html";
 				
 				oldname=name;
@@ -66,16 +63,13 @@ const createLinks = () => {
 					
 				}
 			}
-}	// localStorage de tous les articles
-		//  createLinks( (creeer liens)
-			// for each links => addEventListener('click'=>setLocalStorage('currentArticle', event.target.getAttr('id'))))
+}	
 }	
 const createListener = () => {
-	var links = document.getElementsByClassName('test');
+	var links = document.getElementsByClassName('product');
 	for (let i = 0; i<links.length; i++) {
 		links[i].addEventListener('click', function(e) {
-			console.log(event.target.getAttribute('id'))
-			localStorage.setItem('article_id',event.currentTarget.getAttribute('id'));
+			sessionStorage.setItem('article_id',event.currentTarget.getAttribute('id'));
 		},)
 	}
 }

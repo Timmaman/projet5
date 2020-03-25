@@ -77,9 +77,6 @@ function product(){
 
 
 
-
-
-
 if (article.name=newname){
             //affichage photo
             const child_photo=document.getElementById("articles");
@@ -88,7 +85,7 @@ if (article.name=newname){
             photo_child.alt=article.name;
             photo_child.title=article.name;
             child_photo.append(photo_child);
-            photo_child.id="product_img";
+            photo_child.id="product";
 
 
             //Pour afficher le nom du produit

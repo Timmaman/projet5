@@ -1,6 +1,6 @@
 
 	async function recup() {
-	let id=localStorage.getItem("article_id")
+	let id=sessionStorage.getItem("article_id")
 	
 	response = await fetch("http://localhost:3000/api/cameras/"+id);
 	let product= await response.json();
@@ -8,7 +8,6 @@
 	
 }
 recup().then(function(product){
-		//remplissage menu de personnalisation
 		const lenses = product.lenses;
 		for (let i = 0; i<lenses.length; i++) {
 			const child_lenses=document.getElementById("personnalisation")
@@ -23,7 +22,6 @@ recup().then(function(product){
 		photo_child.title=product.name;
 		child_photo.append(photo_child);
 		photo_child.id="product_img";
-
 
 		//Pour afficher la description
 		const child_description=document.getElementById("infos");
@@ -45,13 +43,12 @@ recup().then(function(product){
 		const child_name=document.getElementById("infos");
 		const name_child=document.createElement("h3");
 		child_name.append(name_child);
+		name_child.className=product.name;
 		name_child.id="name";
 		console.log (name_child.innerHTML+=product.name);
-
-
-		
-})
 	
+	})
+
 
 	
 

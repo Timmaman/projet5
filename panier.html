@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="oriphoto.css">
+			<title>Panier - Oriphoto </title>
+			<link rel="icon" href="images/logosite.jpg" />
+
+			<link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
+			<script type="text/javascript" src="affichage_produits.js" defer></script>
+
+	</head>
+	<body onload="recup()">
+		<header class="logo">
+			<a href="index.html">
+				<img src="images/logosite.jpg" />
+				<h1> Oriphoto</h1>
+			</a>
+			<navbar>
+  				<a href="index.html">Index</a>
+  				<a class="active"href="panier.html">Panier</a>
+			</navbar> 
+		</header>
+		<main >
+			<h2> Voici les produits ajoutés au panier </h2>
+			<section id="panier">
+				<form method="post" id="contact">
+					<p>
+						<label> Votre prénom </label> 
+						<input type="text" name="firstName" placeholder="prénom" id="firstName" /> 
+					</p>
+					<p>
+						<label> Votre Nom </label> 
+						<input type="text" name="lastName" placeholder="Nom" id="LastName" /> 
+					</p>
+					<p>
+						<label> Votre rue et votre numéro de rue </label> 
+						<input type="text" name="adress" placeholder="Rue et numéro de rue" id="adress" /> 
+					</p>
+					<p>
+						<label> Votre ville</label> 
+						<input type="text" name="city" placeholder="Votre ville" id="city" /> 
+					</p>
+					<p>
+						<label> Votre adresse mail </label> 
+						<input type="email" name="email" placeholder="Votre Email" id="email" /> 
+					</p>
+					<input type="submit" value="Envoyer" />
+				</form>
+			</section>
+			<script type="text/javascript" src="button.js"></script>
+		</main>
+		<footer>
+			<a href="mentions.html">Mentions légales</a>
+		</footer>
+	</body>
+</html>
