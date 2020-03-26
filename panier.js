@@ -1,10 +1,11 @@
 async function panier() {
 	let number=sessionStorage.getItem("nb");
 	const supp=document.getElementById("nothing");
-	if (number!=undefined)
-	{
-		while (supp.firstChild) { supp.removeChild(supp.firstChild);
-    }
+	const garbage=document.getElementById("empty")
+	if (number!=undefined){
+		while (supp.firstChild) { supp.removeChild(supp.firstChild);}
+	}else{
+		while (garbage.firstChild) { garbage.removeChild(garbage.firstChild);}
 	}
 	let totalprice=0;
 	

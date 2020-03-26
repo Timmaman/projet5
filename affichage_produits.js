@@ -59,8 +59,6 @@ const createLinks = () => {
 					price=article.price/100;
 					price+=" €";
 					console.log (price_child.innerHTML+=price);
-
-					
 				}
 			}
 }	

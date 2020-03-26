@@ -14,7 +14,7 @@
 	</head>
 	<body onload="panier()">
 		<header class="logo">
-			<a href="index.html">
+			<a id="logo" href="index.html">
 				<img src="images/logosite.jpg" alt="logo Oriphoto" />
 				<h1> Oriphoto</h1>
 			</a>
@@ -33,32 +33,34 @@
 					<h2> Montant total : </h2>
 				</article>
 			</section>
-			<button onclick="clean()">Vider le panier</button>
-			<section id="form">
-				<h2> Merci de compléter ce formulaire pour commander: </h2>
-				<form method="post" id="contact">
-					<p>
-						<label> Prénom: </label> 
-						<input type="text" name="firstName" placeholder="Prénom" id="firstName" /> 
-					</p>
-					<p>
-						<label> Nom: </label> 
-						<input type="text" name="lastName" placeholder="Nom" id="LastName" /> 
-					</p>
-					<p>
-						<label> Adresse: </label> 
-						<input type="text" name="adress" placeholder="Adresse" id="adress" /> 
-					</p>
-					<p>
-						<label>Ville:</label> 
-						<input type="text" name="city" placeholder="Ville" id="city"/> 
-					</p>
-					<p>
-						<label> Email: </label> 
-						<input type="email" name="email" placeholder="Email" id="email" /> 
-					</p>
-					<input id="send" type="submit" value="Commander" />
-				</form>
+			<section id="empty">
+				<button onclick="clean()" >Vider le panier</button>
+				<article id="form">
+					<h2> Merci de compléter ce formulaire pour commander: </h2>
+					<form method="post" id="contact">
+						<p>
+							<label> Prénom: </label> 
+							<input type="text" name="firstName" placeholder="Prénom" id="firstName" /> 
+						</p>
+						<p>
+							<label> Nom: </label> 
+							<input type="text" name="lastName" placeholder="Nom" id="LastName" /> 
+						</p>
+						<p>
+							<label> Adresse: </label> 
+							<input type="text" name="adress" placeholder="Adresse" id="adress" /> 
+						</p>
+						<p>
+							<label>Ville:</label> 
+							<input type="text" name="city" placeholder="Ville" id="city"/> 
+						</p>
+						<p>
+							<label> Email: </label> 
+							<input type="email" name="email" placeholder="Email" id="email" /> 
+						</p>
+						<input id="send" type="submit" value="Commander" />
+					</form>
+				</article>
 			</section>
 			<script type="text/javascript" src="button.js"></script>
 		</main>

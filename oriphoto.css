@@ -5,7 +5,7 @@ body
 	margin: 0;
 }
 
-header, footer
+#logo, footer
 {
 	background: rgb(251 ,229, 192);
 }
@@ -18,8 +18,12 @@ footer, header a
 header
 {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: space-around;
+}
+header h1:hover
+{
+	color:#936D58;
 }
 main
 {
@@ -37,6 +41,7 @@ footer a
 {
 	padding: 30px;
 	font-size: 25px;
+	color:black;
 }
 
 main a
@@ -48,7 +53,8 @@ main a
 }
 #Allproducts a:hover
 {
-	background-color:rgb(248,158,35);
+	background-color:#936D58;
+	color:white;
 }
 #articles, #product, #buy
 {
@@ -58,7 +64,7 @@ main a
 	text-align:center;
 	align-items: center;
 }
-#articles
+#articles, #buy
 {
 	flex-wrap:wrap;
 	margin-top:20px; 
@@ -67,10 +73,7 @@ main a
 {
 	flex-wrap: wrap-reverse;
 }
-#buy
-{
 
-}
 p
 {
 	margin: 0;
@@ -128,24 +131,32 @@ select
 {
 	margin: 30px 0;
 }
-button
+button, #send
 {
 	font-size: 20px;
 	width: auto;
 	margin: auto;
 	border-radius: 20px;
 	padding: 5px 30px;
+	background-color:#936D58;
+	color:white;
 }
 .active
 {
 	display: none;
 }
+nav a
+{
+	color: white;
+}
 nav
 {
 	display: flex;
 	justify-content: space-around;
-	padding-right:100px;
 	font-size: 25px;
+	padding: 10px 50px;
+	background-color:#936D58; 
+
 }
 #all p
 {
@@ -157,9 +168,8 @@ nav
 }
 #all h3
 {
-	color: red;
+	font-size: 35px;
 	margin-top: 0;
-
 }
 #access button
 {
@@ -205,7 +215,29 @@ input
 	{
 		width: 40%
 	}
-
+	header
+	{
+		flex-direction: row;
+		justify-content: space-between;
+		background-color: rgb(251 ,229, 192, 0.4);
+	}
+	nav
+	{
+		padding-right: 100px;
+		background-color: rgb(251 ,229, 192);
+	}
+	nav a 
+	{
+		color: black;
+	}
+	nav a:hover, footer a:hover
+	{
+		color:#936D58;
+	}
+	.logo
+	{
+		background-color: rgb(251 ,229, 192);
+	}
 	.logo img
 	{
 		height: 200px
