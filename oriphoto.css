@@ -46,16 +46,17 @@ main a
 	color:black;
 	width: 95%;
 }
-main a:hover
+#Allproducts a:hover
 {
 	background-color:rgb(248,158,35);
 }
-#articles, #product
+#articles, #product, #buy
 {
 	padding-bottom: 20px;
 	display: flex;
 	justify-content: space-evenly;
 	text-align:center;
+	align-items: center;
 }
 #articles
 {
@@ -65,6 +66,10 @@ main a:hover
 #product
 {
 	flex-wrap: wrap-reverse;
+}
+#buy
+{
+
 }
 p
 {
@@ -117,10 +122,11 @@ select
 	margin-left: auto;
 	width: auto;
 	padding: 5px 20px;
-	margin-right: auto;
 	border-radius: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+}
+#objectif
+{
+	margin: 30px 0;
 }
 button
 {
@@ -134,14 +140,44 @@ button
 {
 	display: none;
 }
-navbar
+nav
 {
 	display: flex;
 	justify-content: space-around;
 	padding-right:100px;
 	font-size: 25px;
 }
+#all p
+{
+	font-size: 25px;
+}
+#all h2
+{
+	font-size: 30px;
+}
+#all h3
+{
+	color: red;
+	margin-top: 0;
 
+}
+#access button
+{
+	margin: 30px;
+	font-size: 25px;
+}
+input
+{
+	font-size: 20px;
+}
+#send
+{
+	font-size: 20px;
+	width: auto;
+	margin:30px 0;
+	border-radius: 20px;
+	padding: 5px 30px;
+}
 @media screen and (min-width:767px)
 {
 	body

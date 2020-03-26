@@ -8,45 +8,56 @@
 			<link rel="icon" href="images/logosite.jpg" />
 
 			<link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
-			<script type="text/javascript" src="affichage_produits.js" defer></script>
+			<script type="text/javascript" src="panier.js"></script>
+
 
 	</head>
-	<body onload="recup()">
+	<body onload="panier()">
 		<header class="logo">
 			<a href="index.html">
-				<img src="images/logosite.jpg" />
+				<img src="images/logosite.jpg" alt="logo Oriphoto" />
 				<h1> Oriphoto</h1>
 			</a>
-			<navbar>
+			<nav>
   				<a href="index.html">Index</a>
   				<a class="active"href="panier.html">Panier</a>
-			</navbar> 
+			</nav> 
 		</header>
-		<main >
-			<h2> Voici les produits ajoutés au panier </h2>
-			<section id="panier">
+		<main id="all" >
+			<section id="buy">
+				<article id="panier">
+					<h2> Produits dans le panier: </h2>
+					<p id="nothing"> Actuellement votre panier est vide.</p>
+				</article>
+				<article id="totalprice">
+					<h2> Montant total : </h2>
+				</article>
+			</section>
+			<button onclick="clean()">Vider le panier</button>
+			<section id="form">
+				<h2> Merci de compléter ce formulaire pour commander: </h2>
 				<form method="post" id="contact">
 					<p>
-						<label> Votre prénom </label> 
-						<input type="text" name="firstName" placeholder="prénom" id="firstName" /> 
+						<label> Prénom: </label> 
+						<input type="text" name="firstName" placeholder="Prénom" id="firstName" /> 
 					</p>
 					<p>
-						<label> Votre Nom </label> 
+						<label> Nom: </label> 
 						<input type="text" name="lastName" placeholder="Nom" id="LastName" /> 
 					</p>
 					<p>
-						<label> Votre rue et votre numéro de rue </label> 
-						<input type="text" name="adress" placeholder="Rue et numéro de rue" id="adress" /> 
+						<label> Adresse: </label> 
+						<input type="text" name="adress" placeholder="Adresse" id="adress" /> 
 					</p>
 					<p>
-						<label> Votre ville</label> 
-						<input type="text" name="city" placeholder="Votre ville" id="city" /> 
+						<label>Ville:</label> 
+						<input type="text" name="city" placeholder="Ville" id="city"/> 
 					</p>
 					<p>
-						<label> Votre adresse mail </label> 
-						<input type="email" name="email" placeholder="Votre Email" id="email" /> 
+						<label> Email: </label> 
+						<input type="email" name="email" placeholder="Email" id="email" /> 
 					</p>
-					<input type="submit" value="Envoyer" />
+					<input id="send" type="submit" value="Commander" />
 				</form>
 			</section>
 			<script type="text/javascript" src="button.js"></script>

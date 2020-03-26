@@ -1,9 +1,3 @@
-function recup(){
-	var infos=document.getElementById('add')
-	console.log(infos)
-	infos.onclick()= Showalert;
-	
+function clear(){
+	alert("coucou");
 }
-	function Showalert(){alert("produit ajouté");
-		
-	}
