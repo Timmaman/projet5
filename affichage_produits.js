@@ -11,6 +11,7 @@ async function recup() {
 recup().then(function(data){
 		create()
 })
+
 //function display() {}
 
 const create = () => {
@@ -63,6 +64,7 @@ const createLinks = () => {
 			}
 }	
 }	
+// Récupération de l'ID du produit sélectionné
 const createListener = () => {
 	var links = document.getElementsByClassName('product');
 	for (let i = 0; i<links.length; i++) {

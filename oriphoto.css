@@ -188,6 +188,34 @@ input
 	border-radius: 20px;
 	padding: 5px 30px;
 }
+form
+{
+	width: 300px;
+	margin: auto;
+}
+form p
+{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding-bottom: 20px;
+
+}
+input
+{
+	text-align: center;
+	width: 100%;
+}
+#final_header h1
+{
+	margin: 0;
+}
+#commande
+{
+	padding-bottom:50px;
+}
+
 @media screen and (min-width:767px)
 {
 	body
@@ -242,7 +270,19 @@ input
 	{
 		height: 200px
 	}
-
+	form
+	{
+		width: 500px;
+	}
+	form p
+	{
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	input
+	{
+		width: 75%;
+	}
 	footer a
 	{
 		font-size: 30px;

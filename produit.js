@@ -1,12 +1,19 @@
-
-	async function recup() {
+	// Récupération du produit cliqué
+async function recup() {
 	let id=sessionStorage.getItem("article_id")
-	
+	console.log(id)
+
+	//Si on arrive direct sur la page produit --> Renvoi page index
+	if (id==undefined){
+		 document.location.href="index.html";
+	}
+	else{
 	response = await fetch("http://localhost:3000/api/cameras/"+id);
 	let product= await response.json();
-	return product; 
-	
+	return product; }
 }
+
+//Afficjage du produit sélectioné
 recup().then(function(product){
 		const lenses = product.lenses;
 		for (let i = 0; i<lenses.length; i++) {
@@ -14,7 +21,9 @@ recup().then(function(product){
 			const lenses_child=document.createElement("option");
 			child_lenses.append(lenses_child);
 			console.log(lenses_child.innerHTML=lenses[i])
-					}
+		}
+
+		//Affichage photos
 		const child_photo=document.getElementById("product");
 		const photo_child=document.createElement("img");
 		photo_child.src=product.imageUrl;
@@ -47,33 +56,46 @@ recup().then(function(product){
 		name_child.className=product.name;
 		name_child.id="name";
 		console.log (name_child.innerHTML+=product.name);
-	
+
+		const child_id=document.getElementById("infos");
+		const id_child=document.createElement("h3");
+		child_id.append(id_child);
+		id_child.className=product._id;
+		id_child.id="id";
+
 	})
 
+// Ajout au panier
 function add(){
+	// Récupération des noms de produit, prix et ID
 	const name=document.getElementById('name');
 	let product=name.getAttribute('class');
 	const price=document.getElementById('price');
 	let value= price.getAttribute('class');
+	const identifier=document.getElementById('id');
+	let id_name= identifier.getAttribute('class');
 	let stock=sessionStorage.getItem("nb");
 	let all=localStorage.getItem("add")
+
+
 	if(stock==undefined){
 		stock=0;
 		all="a"
 	}
-	let search=all.indexOf(product)!=-1;
-	console.log(all)
-	console.log(search)
 
+	//test si le produit est déjà dans le panier
+	let search=all.indexOf(product)!=-1;
 	if( search==1){
 		alert("Ce produit est déjà dans votre panier")
 	}
+	//Ajout au panier
 	else{
 	let i=stock;
 	all+=product
 	i++;
 	localStorage.setItem("article_name"+i,product);
 	localStorage.setItem("article_price"+i,value);
+	localStorage.setItem("article_id"+i, id_name);
 	localStorage.setItem("add",all)
 	sessionStorage.setItem("nb",i);
 	alert("Ce produit a bien été ajouté au panier!");
