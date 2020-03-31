@@ -13,7 +13,7 @@ async function recup() {
 	return product; }
 }
 
-//Afficjage du produit sélectioné
+//Affichage du produit sélectioné
 recup().then(function(product){
 		const lenses = product.lenses;
 		for (let i = 0; i<lenses.length; i++) {
@@ -97,7 +97,7 @@ function add(){
 	localStorage.setItem("article_price"+i,value);
 	localStorage.setItem("article_id"+i, id_name);
 	localStorage.setItem("add",all)
-	sessionStorage.setItem("nb",i);
+	localStorage.setItem("nb",i);
 	alert("Ce produit a bien été ajouté au panier!");
 	}
 }

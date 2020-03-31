@@ -1,7 +1,7 @@
 
 
 function panier() {
-	let number=sessionStorage.getItem("nb");
+	let number=locaStorage.getItem("nb");
 	const supp=document.getElementById("nothing");
 	const garbage=document.getElementById("empty")
 
@@ -52,7 +52,7 @@ async function sendData(){
 	let email=document.getElementById("email").value;
 
 	if (firstName==0, lastName==0, adress==0, city==0, email==0){
-	alert("merci de compléter tous les champs pour pouvoir commander");
+	alert("Merci de compléter tous les champs pour pouvoir commander");
 	}
 
 	//Remplissage de l'objet à envoyer à la requête

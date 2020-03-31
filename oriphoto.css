@@ -215,6 +215,12 @@ input
 {
 	padding-bottom:50px;
 }
+.mentions
+{
+	padding: 30px;
+	font-size: 25px;
+	color:black;
+}
 
 @media screen and (min-width:767px)
 {
@@ -286,6 +292,10 @@ input
 	footer a
 	{
 		font-size: 30px;
+	}
+	.mentions
+	{
+		padding: 50px;
 	}
 
 }

@@ -12,7 +12,7 @@ recup().then(function(data){
 		create()
 })
 
-//function display() {}
+//function creat() {}
 
 const create = () => {
 	createLinks();
