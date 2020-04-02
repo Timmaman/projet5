@@ -1,7 +1,7 @@
 
 
 function panier() {
-	let number=locaStorage.getItem("nb");
+	let number=localStorage.getItem("nb");
 	const supp=document.getElementById("nothing");
 	const garbage=document.getElementById("empty")
 
